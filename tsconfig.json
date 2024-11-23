@@ -1,0 +1,17 @@
+
+{
+  "compilerOptions": {
+    "baseUrl": "./",              // This sets the base directory for resolving non-relative paths
+    "paths": {
+      "@/*": ["src/*"]            // This maps `@` to the `src` directory
+    },
+    "strict": true,               // Enable strict type checking
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },  // Reference the app-specific config
+    { "path": "./tsconfig.node.json" }  // Reference the Node.js config (if needed)
+  ]
+}
