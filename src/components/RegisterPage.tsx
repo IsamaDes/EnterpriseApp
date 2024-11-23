@@ -24,7 +24,13 @@ const Register = () => {
         name,
         email,
         password,
-      });
+      },   
+      {
+        headers: {
+          'Content-Type': 'application/json',  // Ensure that this header is set
+        },
+      }
+    );
       setMessage(`Registration successful! ${response.data.message}`);
     } catch (error) {
       setMessage('Error during registration');
