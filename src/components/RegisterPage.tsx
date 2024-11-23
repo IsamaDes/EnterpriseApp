@@ -9,11 +9,13 @@ const Register = () => {
   const [message, setMessage] = useState('');
 
   // Determine the backend URL based on environment (development or production)
-  const BACKEND_URL =
+  const BACKEND_URL =  
+
     process.env.NODE_ENV === 'production'
       ? 'https://enterprisebackend.onrender.com'
       
       : 'http://localhost:5000';
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
