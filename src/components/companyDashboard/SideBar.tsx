@@ -1,14 +1,7 @@
-
-
-
-
-
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-  const navigate = useNavigate(); // Initialize the navigate function
-
-  // Function to handle navigation
+  const navigate = useNavigate(); 
   const handleNavigate = (path: string) => {
     navigate(path);
   };
@@ -16,7 +9,6 @@ const Sidebar = () => {
   return (
     <div className="flex">
       <div className="w-[45px] bg-[#121638] col-auto justify-items-center">
-        {/* Add icons here if needed */}
       </div>
       <div className="bg-white w-[230px] border min-h-screen justify-center items-center">
        

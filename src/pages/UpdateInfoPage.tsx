@@ -5,10 +5,8 @@ import UpdateInformationPage from "@/components/UpdateInformationPage"
 
 function UpdateInfoPage() {
   return (
-   
     <div className="flex  ">
       <Sidebar/>
-
       <div className="flex flex-col w-full ">
         <NavBar/>
         <UpdateInformationPage/>

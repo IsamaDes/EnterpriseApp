@@ -5,11 +5,8 @@ import NavBar from '../../components/companyDashboard/NavBar.tsx'
 
 function CompanyKycPage() {
   return (
-
-
     <div className="flex  ">
       <Sidebar/>
-
       <div className="flex flex-col w-full ">
         <NavBar/>
         <Kyc/>

@@ -19,16 +19,14 @@ const FaqComponent: React.FC = () => {
   ];
 
   const handleQuestionClick = (index: number) => {
-    setActiveQuestion(prev => (prev === index ? null : index));  // Toggle answer visibility
+    setActiveQuestion(prev => (prev === index ? null : index));  
   };
 
-  // Update scrollbar thumb size and position based on the content scroll position
   const updateScrollbar = useCallback(() => {
     if (faqListRef.current && scrollbarThumbRef.current) {
       const { scrollTop, scrollHeight, clientHeight } = faqListRef.current;
-      const thumbHeight = Math.max(clientHeight / scrollHeight * clientHeight, 20); // Thumb height based on the scrollable content
+      const thumbHeight = Math.max(clientHeight / scrollHeight * clientHeight, 20); 
       const thumbPosition = (scrollTop / scrollHeight) * clientHeight;
-
       scrollbarThumbRef.current.style.height = `${thumbHeight}px`;
       scrollbarThumbRef.current.style.transform = `translateY(${thumbPosition}px)`;
     }
@@ -38,8 +36,6 @@ const FaqComponent: React.FC = () => {
     if (faqListRef.current) {
       updateScrollbar();
     }
-
-    // Add scroll event listener to update scrollbar position
     const scrollHandler = () => updateScrollbar();
     faqListRef.current?.addEventListener('scroll', scrollHandler);
 
@@ -47,30 +43,15 @@ const FaqComponent: React.FC = () => {
       faqListRef.current?.removeEventListener('scroll', scrollHandler);
     };
   }, [updateScrollbar]);
-
-//   const handleMouseDown = (e: MouseEvent) => {  // Cast event to MouseEvent
-//     if (scrollbarThumbRef.current) {
-//       isDraggingRef.current = true;
-//       initialYRef.current = e.clientY;
-//       initialTopRef.current = parseFloat(scrollbarThumbRef.current.style.transform.replace('translateY(', '').replace('px)', '') || '0');
-//       document.body.style.cursor = 'grabbing';
-//     }
-//   };
-
-  const handleMouseMove = (e: MouseEvent) => {  // Cast event to MouseEvent
+  const handleMouseMove = (e: MouseEvent) => {  
     if (isDraggingRef.current && faqListRef.current && scrollbarThumbRef.current) {
       const { scrollHeight, clientHeight } = faqListRef.current;
       const deltaY = e.clientY - initialYRef.current;
       const newTop = initialTopRef.current + deltaY;
-
       const thumbHeight = parseFloat(scrollbarThumbRef.current.style.height.replace('px', ''));
-
-      // Restrict the thumb movement to the container
       const maxTop = clientHeight - thumbHeight;
       const newScrollTop = (newTop / maxTop) * (scrollHeight - clientHeight);
-
       faqListRef.current.scrollTop = newScrollTop;
-
       scrollbarThumbRef.current.style.transform = `translateY(${Math.min(Math.max(newTop, 0), maxTop)}px)`;
     }
   };
@@ -84,10 +65,7 @@ const FaqComponent: React.FC = () => {
 
   return (
     <div className="faq-component bg-blue-50 py-8 flex items-start border border-black rounded-xl" style={{ width: '50vw' }}>
-      
-
-        {/* FAQ Left Section (Questions List) */}
-        <div
+              <div
           className="faq-left w-full h-full flex flex-col overflow-y-auto"
           ref={faqListRef}
           style={{ maxHeight: '400px' }}
@@ -109,8 +87,6 @@ const FaqComponent: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Scrollbar Section */}
         <div
           ref={scrollbarRef}
           className="faq-scrollbar w-2 bg-red-300 rounded-lg ml-4 h-full"
@@ -129,7 +105,6 @@ const FaqComponent: React.FC = () => {
             }}
           />
         </div>
-    
     </div>
   );
 };

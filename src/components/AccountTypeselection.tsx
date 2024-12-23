@@ -47,7 +47,6 @@ const AccountTypeSelection: React.FC = () => {
         Select the account type that best meets your needs.
       </p>
 
-      {/* Country Selection */}
       <div className="mb-6">
         <label htmlFor="country" className="block font-medium text-gray-700">
           Country
@@ -71,13 +70,11 @@ const AccountTypeSelection: React.FC = () => {
         </p>
       </div>
 
-      {/* Account Type Selection */}
       <div className="mb-8">
         <label className="block font-medium text-gray-700">
           Select an account type
         </label>
         <div className="mt-4 space-y-4">
-          {/* Business Account */}
           <div
             className={`p-4 border rounded-md hover:shadow-md cursor-pointer ${
               selectedAccountType === 'business' ? 'bg-gray-200' : 'bg-white'
@@ -92,7 +89,6 @@ const AccountTypeSelection: React.FC = () => {
             </p>
           </div>
 
-          {/* Other Entities */}
           <div
             className={`p-4 border rounded-md hover:shadow-md cursor-pointer ${
               selectedAccountType === 'other' ? 'bg-gray-200' : 'bg-white'
@@ -109,7 +105,6 @@ const AccountTypeSelection: React.FC = () => {
         </div>
       </div>
 
-      {/* Continue Button */}
       <div className="text-center mb-8">
         <button
           onClick={handleContinue}
@@ -119,7 +114,6 @@ const AccountTypeSelection: React.FC = () => {
         </button>
       </div>
 
-      {/* Already Have an Account */}
       <div className="text-center">
         <p className="text-gray-600">
           Already have an account?{' '}

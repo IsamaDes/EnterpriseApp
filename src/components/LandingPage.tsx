@@ -36,15 +36,12 @@
 import { Link } from 'react-router-dom';
 import { FaQuoteLeft } from 'react-icons/fa';
 import FaqComponent from './FAQ/FAQ';
-// import businessImage from '../assets/business-image.jpg'; // Example background image
 
 function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Hero Section */}
       <div
         className="relative flex items-center justify-center h-screen bg-cover bg-center"
-        // style={{ backgroundImage: `url(${businessImage})` }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative text-center text-white z-10">
@@ -65,7 +62,6 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* Value Proposition Section */}
       <section className="py-16 bg-gray-100 text-center">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-6">Why Choose Us?</h2>
@@ -92,7 +88,6 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
       <section className="py-16 bg-white text-center">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-6">What Our Users Say</h2>
@@ -115,13 +110,8 @@ function LandingPage() {
         </div>
       </section>
 
+        <div className="flex justify-center items-center flex-col bg-gray-100 py-16 text-center"> <div> <h2 className="text-[40px] font-semibold text-gray-900"> Frequently Asked Questions </h2> </div> <div className="w-full max-w-2xl"> <FaqComponent /> </div> </div>
 
-
-       {/* FAQ Section */} <div className="flex justify-center items-center flex-col bg-gray-100 py-16 text-center"> <div> <h2 className="text-[40px] font-semibold text-gray-900"> Frequently Asked Questions </h2> </div> <div className="w-full max-w-2xl"> <FaqComponent /> </div> </div>
-
-
-
-      {/* Call-to-Action Section */}
       <section className="py-16 bg-blue-500 text-white text-center">
         <div className="container mx-auto px-6">
           <h2 className="text-[18px] font-bold mb-6">Ready to Take Your Business to the Next Level?</h2>
@@ -133,11 +123,6 @@ function LandingPage() {
         </div>
       </section>
 
-
-
-
-
-      {/* Footer */}
       <footer className="py-6 bg-gray-800 text-white text-center">
         <div className="container mx-auto px-6">
           <p>&copy; 2024 BusinessApp. All rights reserved.</p>

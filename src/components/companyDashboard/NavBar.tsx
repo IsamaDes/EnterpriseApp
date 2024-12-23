@@ -4,12 +4,10 @@ import alarm from '../../assets/alarmicon.svg';
 import messages from "../../assets/messages.svg";
 
 const NavBar = () => {
-  // State to manage the dropdown visibility
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [userName, setUserName] = useState<string | null>("");
 
   useEffect(() => {
-    // Retrieve the user data from localStorage
     const storedUserName = localStorage.getItem("userName");
     if (storedUserName) {
       setUserName(storedUserName);
@@ -17,8 +15,6 @@ const NavBar = () => {
     console.log(`User Name: ${storedUserName}`);
   }, []);
 
-
-  // Function to toggle the dropdown
   const toggleDropdown = () => {
     setIsDropdownOpen(prevState => !prevState);
   };
@@ -33,8 +29,6 @@ const NavBar = () => {
           className="bg-transparent border-none outline-none w-full text-sm text-gray-600"
         />
       </div>
-
-      {/* Right Section */}
       <div className="flex bg-blue-100 gap-4">
         <div className="relative flex items-center gap-2">
           <img
@@ -60,7 +54,6 @@ const NavBar = () => {
 
         <div className="relative flex items-center gap-2"></div>
 
-        {/* Customer Service */}
         <div className="flex items-center gap-2 bg-red-100 text-red-600 text-xs rounded-full px-2 py-1">
           <img
             src={eachuser}
@@ -74,8 +67,6 @@ const NavBar = () => {
 
          
         </div>
-
-        {/* Dropdown Menu */}
         {isDropdownOpen && (
           <div className="absolute right-0 mt-8 bg-white shadow-lg rounded-lg w-48 p-2">
             <ul>

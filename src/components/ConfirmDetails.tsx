@@ -62,7 +62,6 @@ export const ConfirmDetails: React.FC = () => {
     <div className="p-8 max-w-2xl mx-auto bg-gray-100 shadow-lg rounded-md">
       <h1 className="text-[18px] font-bold text-gray-800 text-center mb-6">Confirm your details</h1>
 
-      {/* Full Name */}
       <div className="mb-6">
         <label className="block text-gray-700 font-medium mb-2">Full name</label>
         <div className="grid grid-cols-2 gap-4">
@@ -81,7 +80,6 @@ export const ConfirmDetails: React.FC = () => {
         </div>
       </div>
 
-      {/* Email Address */}
       <div className="mb-6">
         <label className="block text-gray-700 font-medium mb-2">Email address</label>
         <input
@@ -92,7 +90,6 @@ export const ConfirmDetails: React.FC = () => {
         />
       </div>
 
-      {/* Password */}
       <div className="mb-6">
         <label className="block text-gray-700 font-medium mb-2">Password</label>
         <input
@@ -103,7 +100,6 @@ export const ConfirmDetails: React.FC = () => {
         />
       </div>
 
-      {/* Is Business Incorporated */}
       <div className="mb-6">
         <label className="block text-gray-700 font-medium mb-2">Is your business incorporated?</label>
         <div>
@@ -128,7 +124,6 @@ export const ConfirmDetails: React.FC = () => {
         </div>
       </div>
 
-      {/* Registration Type */}
       <div className="mb-6">
         <label className="block text-gray-700 font-medium mb-2">Registration Type</label>
         <select
@@ -145,7 +140,6 @@ export const ConfirmDetails: React.FC = () => {
         </select>
       </div>
 
-      {/* Agreements */}
       <div className="mb-6">
         <label className="block text-gray-700 font-medium mb-2">Agreements</label>
         <div>
@@ -168,7 +162,6 @@ export const ConfirmDetails: React.FC = () => {
         </div>
       </div>
 
-      {/* Date of Incorporation */}
       <div className="mb-6">
         <label className="block text-gray-700 font-medium mb-2">Date of Incorporation</label>
         <input
@@ -179,7 +172,6 @@ export const ConfirmDetails: React.FC = () => {
         />
       </div>
 
-      {/* File Uploads */}
       <div className="mb-6">
         <label className="block text-gray-700 font-medium mb-2">Certificate of Incorporation</label>
         <input
@@ -213,7 +205,6 @@ export const ConfirmDetails: React.FC = () => {
         />
       </div>
 
-      {/* Submit Button */}
       <button
         className="w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow hover:bg-blue-600"
         onClick={handleSubmit}

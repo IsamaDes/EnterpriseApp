@@ -25,18 +25,13 @@ const App = () => {
           <Route path="/verify-user" element={<VerifyOtp />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/update-information" element={<UpdateInformationPage />} />
-
           <Route path="/director-details" element={<DirectorDetails/>} />
           <Route path="/admin-details" element={<AdminDetails/>} />
           <Route path="/company-dashboard" element={<CompanyDashboardPage />} />
           <Route path="/business-dashboard" element={<BusinessDashboard />} />
           <Route path="/kyc" element={<CompanyKycPage />} />
-          {/* <Route path="/company-settings" element={<Settings />} /> */}
           <Route path="/account-selection" element={<AccountTypeSelection/>} />
           <Route path="/confirm-details" element={<ConfirmDetails/>} />
-
-
-
         </Routes>
       </Router>
     </AuthProvider>

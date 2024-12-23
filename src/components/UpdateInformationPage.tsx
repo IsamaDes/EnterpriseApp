@@ -7,8 +7,6 @@ const UpdateInformationPage: React.FC = () => {
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-4xl">
         <h2 className="text-2xl font-bold mb-6">Update Information</h2>
         <div className="flex">
-          
-          {/* Main Content */}
           <div className="w-3/4">
             <h3 className="text-lg font-bold mb-4">What type of account do you want to create?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -61,7 +61,6 @@ const AdminDetails: React.FC = () => {
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-4xl">
         <h2 className="text-2xl font-bold mb-6">Director Details</h2>
         <form onSubmit={handleSubmit}>
-          {/* Personal Information */}
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
             <input
@@ -159,7 +158,6 @@ const AdminDetails: React.FC = () => {
             />
           </div>
 
-          {/* Submit KYC Docs for the Company */}
           <div className="mb-8">
             <h3 className="text-lg font-bold mb-4">Submit KYC Docs for the Company</h3>
             <div className="mb-4">
@@ -197,7 +195,6 @@ const AdminDetails: React.FC = () => {
             </div>
           </div>
 
-          {/* Submit Button */}
           <div className="mb-4 text-right">
             <button
               type="submit"

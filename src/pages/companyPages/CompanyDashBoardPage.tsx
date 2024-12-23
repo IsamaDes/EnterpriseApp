@@ -4,10 +4,6 @@ import NavBar from '../../components/companyDashboard/NavBar'
 
 function CompanyDashboardPage() {
   return (
-
-
-
-
     <div className="flex  ">
       <Sidebar/>
 

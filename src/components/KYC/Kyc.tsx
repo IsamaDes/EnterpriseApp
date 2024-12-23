@@ -33,33 +33,19 @@ const Kyc = () => {
   const [certificateOfIncorporation, setCertificateOfIncorporation] = useState<File | null>(null);
   const [memat, setMemat] = useState<File | null>(null);
   const [operationLicense, setOperationLicense] = useState<File | null>(null);
-
-
-   // State to control modal visibility
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const [modalMessage, setModalMessage] = useState('');
-
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
   const navigate = useNavigate();
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setter: React.Dispatch<React.SetStateAction<File | null>>) => {
     if (e.target.files && e.target.files.length > 0) {
       setter(e.target.files[0]);
     }
   };
 
-//   const handleMultipleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     if (e.target.files) {
-//       setFiles(Array.from(e.target.files));
-//     }
-//   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData();
-    // for (let file of files) {
-    //   formData.append('files', file);
-    // }
     formData.append('name', name);
     formData.append('address', address);
     formData.append('phoneNumber', phoneNumber);
@@ -75,13 +61,9 @@ const Kyc = () => {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       console.log(response.data);
-
- // Show success message in modal
  setModalMessage('KYC documents submitted successfully!');
  setIsModalOpen(true);
-    
-    //   navigate('/dashboard');
-    } catch (error) {
+        } catch (error) {
       console.error('Error uploading files:', error);
 
     }
@@ -89,7 +71,6 @@ const Kyc = () => {
 
   const handleModalClose = () => {
     setIsModalOpen(false);
-    // Navigate to dashboard after modal closes
     navigate('/dashboard');
   };
 
@@ -97,9 +78,7 @@ const Kyc = () => {
     <div className='flex bg-lightblue-200 flex-col'>
         <span className='text-[40px] text-center'> Submit Your KYC Documents </span> 
         <span className='text-[25px] text-center'> Please upload the necessary documents to complete your account verification. </span>
-    
-          {/* Modal */}
-      {isModalOpen && <Modal message={modalMessage} onClose={handleModalClose} />}
+          {isModalOpen && <Modal message={modalMessage} onClose={handleModalClose} />}
 
     <form className='flex flex-col p-10' onSubmit={handleSubmit}>
       <label htmlFor="name" className="mb-2 text-sm text-left font-semibold text-gray-700">Name</label>
@@ -112,8 +91,6 @@ const Kyc = () => {
         required
         className="border rounded-md p-2 mb-4 w-1/2"
       />
-
-      {/* Address Field */}
       <label htmlFor="address" className="mb-2 text-sm  text-left font-semibold text-gray-700">Address</label>
       <input
         type="text"
@@ -124,8 +101,6 @@ const Kyc = () => {
         required
         className="border rounded-md p-2 mb-4 w-1/2"
       />
-
-      {/* Phone Number Field */}
       <label htmlFor="phoneNumber" className="mb-2 text-sm  text-left font-semibold text-gray-700">Phone Number</label>
       <input
         type="text"
@@ -136,8 +111,6 @@ const Kyc = () => {
         required
         className="border rounded-md p-2 mb-4 w-1/2"
       />
-
-      {/* Date of Business Incorporation Field */}
       <label htmlFor="dateOfBusinessIncorporation" className="mb-2 text-sm  text-left font-semibold text-gray-700">Date of Business Incorporation</label>
       <input
         type="date"
@@ -148,7 +121,6 @@ const Kyc = () => {
         className="border rounded-md p-2 mb-4 w-1/2"
       />
 
-      {/* Utility Bills Upload */}
       <label htmlFor="utilityBills" className="mb-2 mt-8 text-sm font-semibold text-left  text-gray-700">Utility Bills</label>
       <input
         type="file"
@@ -158,7 +130,6 @@ const Kyc = () => {
         className="border rounded-md p-2 mb-4  w-1/2"
       />
 
-      {/* Certificate of Incorporation Upload */}
       <label htmlFor="certificateOfIncorporation" className="mb-2 text-sm text-left font-semibold text-gray-700">Certificate of Incorporation</label>
       <input
         type="file"
@@ -168,7 +139,6 @@ const Kyc = () => {
         className="border rounded-md p-2 mb-4 w-1/2"
       />
 
-      {/* Memorandum and Articles of Association Upload */}
       <label htmlFor="memat" className="mb-2 text-sm font-semibold text-left text-gray-700">Memorandum and Articles of Association</label>
       <input
         type="file"
@@ -177,8 +147,6 @@ const Kyc = () => {
         required
         className="border rounded-md p-2 mb-4 w-1/2"
       />
-
-      {/* Operational License Upload */}
       <label htmlFor="operationLicense" className="mb-2 text-sm font-semibold text-left text-gray-700">Operational License</label>
       <input
         type="file"
@@ -187,8 +155,6 @@ const Kyc = () => {
         required
         className="border rounded-md p-2 mb-4 w-1/2"
       />
-
-      {/* Submit Button */}
       <button
         type="submit"
         className="bg-blue-500 w-[100px] mt-8 text-white py-2 px-4 rounded-md"
